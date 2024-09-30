@@ -5,6 +5,7 @@
 package Vista;
 
 import javax.swing.JTextField;
+import Vista.Agregar_informacion;
 
 /**
  *
@@ -13,7 +14,7 @@ import javax.swing.JTextField;
 class TextPrompt {
 
     TextPrompt(String nombre, JTextField txtNombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
     
 }

@@ -1,7 +1,9 @@
 
 package Vista;
 
+import Controlador.ctrlAgregarInfo;
 import javax.swing.JTextField;
+import Modelo.Electricista;
 import Vista.TextPrompt;
 
 public class Agregar_informacion extends javax.swing.JFrame {
@@ -12,10 +14,18 @@ public class Agregar_informacion extends javax.swing.JFrame {
     public Agregar_informacion() {
         initComponents();
         
-        TextPrompt prueba = new TextPrompt ("Nombre",txtNombre);
+        TextPrompt pruePromptba = new TextPrompt ("Nombre",txtNombre);
         TextPrompt agregaredad = new TextPrompt("Edad", txtEdad);
         TextPrompt Peso = new TextPrompt("Peso", txtPeso);
         TextPrompt correo = new TextPrompt("Correo Electronico", txtCorreoElectronico);
+    }
+    
+    public static void initAgregar_informacion(){
+        
+        Electricista Modelo = new Electricista();
+        Agregar_informacion Vista = new Agregar_informacion();
+        ctrlAgregarInfo Controlador = new ctrlAgregarInfo(Modelo, Vista);
+        
     }
 
     /**
@@ -38,7 +48,7 @@ public class Agregar_informacion extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtbElectricista = new javax.swing.JTable();
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
@@ -60,18 +70,18 @@ public class Agregar_informacion extends javax.swing.JFrame {
 
         jLabel6.setText("Correo Electronico");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtbElectricista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Edad", "Peso", "Correo "
+                "UUID", "Nombre", "Edad", "Peso", "Correo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtbElectricista);
 
         btnAgregar.setBackground(new java.awt.Color(0, 153, 153));
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -98,7 +108,7 @@ public class Agregar_informacion extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(225, 225, 225)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -127,9 +137,8 @@ public class Agregar_informacion extends javax.swing.JFrame {
                                     .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +172,7 @@ public class Agregar_informacion extends javax.swing.JFrame {
                 .addGap(0, 159, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -215,7 +224,7 @@ public class Agregar_informacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jtbElectricista;
     public javax.swing.JTextField txtCorreoElectronico;
     public javax.swing.JTextField txtEdad;
     public javax.swing.JTextField txtNombre;
